@@ -16,3 +16,18 @@ code {
   position: absolute;
   margin-left: 10px;
 }
+
+
+
+.button--reset{
+  width: 80px;
+  height: 25px;
+  position: absolute;
+  top: 100px;
+  right:  50px;
+}
+
+.databases-list{
+  position: absolute;
+  top: 100px;
+}

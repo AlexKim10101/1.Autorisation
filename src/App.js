@@ -3,7 +3,7 @@ import Boxes from './Boxes'
 
 const initialState = {
   isAuth: false, // флаг авторизации (boolean), ставится true только после прохождения всех шагов авторизации
-  step: 0, // шаг процесса авт оризации (-выбор базы, -ввод логина и пароля, -выбор схемы, -выбор рабочего стола)
+  step: 0, // шаг процесса авторизации (-выбор базы, -ввод логина и пароля, -выбор схемы, -выбор рабочего стола)
   infobasesList: null, // список информационных баз
   desktopsList: null, // список рабочих столов
 }
@@ -33,17 +33,43 @@ function reducer(state, action) {
 
 
 function App() {
-  const [model, dispatch] = useReducer(reducer, initialState)
+  const [model, dispatch] = useReducer(reducer, initialState);
 
-  // actions...
- 
+  function forwardStep(){
+    dispatch({type:"STEP_UP"});
+    
+  }
+
+  function chooseInfo(id){
+    dispatch({type:"CHOOSE_INFO", id: id});
+  }
+
+  function chooseList(id){
+    dispatch({type:"CHOOSE_LIST", id: id});
+  }
+
+  function reset(){
+    dispatch({type:"RESET"});
+
+  }
+
+  
+  
   return (
     <div className="App">
       <div className="model">
-        <pre>{JSON.stringify(model, null, 2)}</pre>
+        <pre>{JSON.stringify(model, null, 2)}</pre>        
       </div>
 
-      <Boxes />
+      
+      <button className="button button--reset" value="RESET" onClick={reset}>RESET</button>
+
+      <Boxes step={model.step} 
+        forwardStep={forwardStep.bind(this)} 
+        chooseInfo={chooseInfo.bind(this)}
+        chooseList={chooseList.bind(this)}
+      />
+
     </div>
   );
 }
