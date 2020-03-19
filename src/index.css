@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: rgba(240, 240, 240, 1);
 }
 
 code {
@@ -12,22 +14,69 @@ code {
     monospace;
 }
 
-.model {
-  position: absolute;
-  margin-left: 10px;
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.model {
+  position: absolute;
+  top:10px;
+  margin-left: 10px;
+  align-self: flex-start;
+}
 
 .button--reset{
   width: 80px;
   height: 25px;
   position: absolute;
-  top: 100px;
+  top: 50px;
   right:  50px;
 }
 
-.databases-list{
+.access-list, .databases-list, .screen-list{
   position: absolute;
   top: 100px;
 }
+
+.databases-list{
+  background-color: white;
+  border-radius: 4px;
+  width: 150px;
+  max-height: 400px;
+  padding: 10px;
+  overflow-y: scroll;
+
+}
+
+.databases-list > li{
+  cursor: pointer;
+  border-bottom: 1px solid grey;
+  margin-bottom: 5px;
+}
+
+.container-form{
+  position: absolute;
+  top:20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.registration-form{
+  display: flex;
+  flex-direction: column;
+}
+
+
+input{
+  border: 1px solid black;
+}
+

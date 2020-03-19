@@ -36,20 +36,20 @@ function App() {
   const [model, dispatch] = useReducer(reducer, initialState);
 
   function forwardStep(){
-    dispatch({type:"STEP_UP"});
+    dispatch({type:STEP_UP});
     
   }
 
   function chooseInfo(id){
-    dispatch({type:"CHOOSE_INFO", id: id});
+    dispatch({type:CHOOSE_INFO, id});
   }
 
   function chooseList(id){
-    dispatch({type:"CHOOSE_LIST", id: id});
+    dispatch({type:CHOOSE_LIST, id});
   }
 
   function reset(){
-    dispatch({type:"RESET"});
+    dispatch({type:RESET});
 
   }
 
@@ -65,9 +65,9 @@ function App() {
       <button className="button button--reset" value="RESET" onClick={reset}>RESET</button>
 
       <Boxes step={model.step} 
-        forwardStep={forwardStep.bind(this)} 
-        chooseInfo={chooseInfo.bind(this)}
-        chooseList={chooseList.bind(this)}
+        forwardStep={forwardStep} 
+        chooseInfo={chooseInfo}
+        chooseList={chooseList}
       />
 
     </div>

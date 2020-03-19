@@ -1,36 +1,30 @@
 import React from 'react'
 
-const DATABASES = [{name: 'ЭР', description: 'описание не указано'},
-	{name: 'ER_New', description: 'для переноса заказчику'},
-	{name: 'FGC2', description: 'описание не указано'},
+const DATABASES = [{id:'1', name: 'ЭР', description: 'описание не указано'},
+	{id:'2', name: 'ER_New', description: 'для переноса заказчику'},
+	{id:'3', name: 'FGC2', description: 'описание не указано'},
+	
 ];
 
 
 export default function Infobases(props) {
 
 	function handleClick(id){
-		props.forwardStep();
+		props.forwardStep(); 
+		return props.chooseInfo(id);
 	}
-
 
 	function renderInfoBasesList(){
-		let list = null;
-		console.log('asd');
-		list = DATABASES.map((item) =>{
-			console.log('ad');
-			return <li onClick={handleClick}>{item.name}</li>
+		return DATABASES.map((item) =>{
+			return <li onClick={()=>handleClick(item.id)}>{item.name}</li>
 		})
-		return list;
+		 
 	}
 
-
-	return (<ul className="databases-list">
-		{renderInfoBasesList()}
-
-
-
-	</ul>)
-
-	
+	return (
+		<ul className="databases-list">
+			{renderInfoBasesList()}
+		</ul>
+	)
 
 }
