@@ -3,7 +3,7 @@ import React from 'react'
 const DATABASES = [{id:'1', name: 'ЭР', description: 'описание не указано'},
 	{id:'2', name: 'ER_New', description: 'для переноса заказчику'},
 	{id:'3', name: 'FGC2', description: 'описание не указано'},
-	
+
 ];
 
 
@@ -22,7 +22,7 @@ export default function Infobases(props) {
 	}
 
 	return (
-		<ul className="databases-list">
+		<ul className="list list--databases">
 			{renderInfoBasesList()}
 		</ul>
 	)

@@ -20,11 +20,12 @@ ul{
   padding: 0;
 }
 
-.App{
+.wrapper{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 80vh;
 }
 
 .model {
@@ -42,27 +43,34 @@ ul{
   right:  50px;
 }
 
-.access-list, .databases-list, .screen-list{
-  position: absolute;
-  top: 100px;
-}
 
-.databases-list{
+
+.list{
   background-color: white;
   border-radius: 4px;
-  width: 150px;
+  width: 200px;
   max-height: 400px;
   padding: 10px;
-  overflow-y: scroll;
-
+  overflow-y: auto;
 }
 
-.databases-list > li{
+.list > li{
   cursor: pointer;
-  border-bottom: 1px solid grey;
   margin-bottom: 5px;
 }
+.list--databases > li, .list--access > li{
+  border-bottom: 1px solid grey;
 
+}
+
+.list--screens{
+  background-color: rgba(240, 240, 240, 1);
+
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+
+}
 .container-form{
   position: absolute;
   top:20%;

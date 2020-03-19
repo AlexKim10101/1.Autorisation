@@ -26,7 +26,7 @@ export default function ScreenSelection(props) {
 		 
 	}
 
-	return (<ul className="screen-list">
+	return (<ul className="list list--screens">
 		{renderInfoBasesList()}
 	</ul>)
 

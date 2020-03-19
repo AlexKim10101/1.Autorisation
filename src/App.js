@@ -64,11 +64,14 @@ function App() {
       
       <button className="button button--reset" value="RESET" onClick={reset}>RESET</button>
 
-      <Boxes step={model.step} 
-        forwardStep={forwardStep} 
-        chooseInfo={chooseInfo}
-        chooseList={chooseList}
-      />
+      <div className="wrapper">
+        <Boxes step={model.step} 
+          forwardStep={forwardStep} 
+          chooseInfo={chooseInfo}
+          chooseList={chooseList}
+        />
+      </div>
+      
 
     </div>
   );

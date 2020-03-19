@@ -18,7 +18,7 @@ export default function AccessSelection(props) {
 		})	 
 	}
 
-	return (<ul className="access-list">
+	return (<ul className="list list--access">
 		{renderInfoBasesList()}
 	</ul>)
 
