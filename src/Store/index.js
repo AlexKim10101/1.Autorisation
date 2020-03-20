@@ -1,5 +1,6 @@
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 import { reducer } from '../Reducer'
 
 export const initialState = {
@@ -10,4 +11,5 @@ export const initialState = {
 }
 
 
-export const store = createStore(reducer, initialState);
+
+export const store = createStore(reducer, initialState, devToolsEnhancer(),);

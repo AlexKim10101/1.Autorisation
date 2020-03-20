@@ -25,10 +25,6 @@ function reset(){
 function App(props) {
   return (
     <div className="App">
-      <div className="model">
-        <pre>{JSON.stringify(props, null, 2)}</pre>        
-      </div>
-      <button className="button button--reset" value="RESET" onClick={props.reset}>RESET</button>
       <div className="wrapper">
         <Boxes step={props.step} 
           forwardStep={props.forwardStep} 
