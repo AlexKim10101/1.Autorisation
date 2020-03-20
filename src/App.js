@@ -42,7 +42,6 @@ function App(props) {
 
 
 const mapStateToProps = store =>  {   
-  console.log(store);
   return  {...store} 
 }
 

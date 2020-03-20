@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
 
-//export default class Authentication extends React.Component {
-	// constructor(props){
-	// 	super(props);
-	// 	this.state={
-	// 		login:null,
-	// 		passworg:null,
-	// 	}
-	// 	this.handleInputChange = this.handleInputChange.bind(this);
-	// 	this.handleSubmit = this.handleSubmit.bind(this);
-	// }
 export default function(props){
 
 	const [inputData, setInputData] = useState({login:'', password:'', memento: false});
@@ -27,15 +17,25 @@ export default function(props){
 		console.log(inputData);
 	}
 
-	
 	return (<div className="container-form">
+		<div className="title-form">Sing in</div>
 		<form className="registration-form" onSubmit={handleSubmit}>
 			<input 
+				className="registration-form__input"
 				type="text" 
 				name="login"
 				value={inputData.login} 
 				onChange={handleInputChange}
 				placeholder="login"></input>
+			
+			<input 
+				className="registration-form__input"
+				type="text" 
+				name="password"
+				value={inputData.password} 
+				onChange={handleInputChange}
+				placeholder="password"></input>
+
 			<div>
 				<input
 					type="checkbox"
@@ -44,14 +44,16 @@ export default function(props){
 					onChange={handleInputChange}></input>
 				<span>Remember me</span>
 			</div>
+
 			<input 
-				type="text" 
-				name="password"
-				value={inputData.password} 
-				onChange={handleInputChange}
-				placeholder="password"></input>
-			<input type="submit" value="Sing in"></input>
+				className="registration-form__input registration-form__input--submit"
+				type="submit" 
+				value="Sing in"></input>
 		</form>
+		<div className="container-links">
+			<a className="link" href="#">Forgot password?</a>
+			<a className="link" href="#">Don't have an account? Sign Up</a>
+		</div>
 	</div>)
 	
 	

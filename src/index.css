@@ -71,11 +71,28 @@ ul{
   justify-content: space-between;
 
 }
+
+
+
+
+/*Authentication*/
 .container-form{
   position: absolute;
-  top:20%;
+  top:40%;
   left: 50%;
   transform: translate(-50%,-50%);
+
+  width: 40%;
+  height: 300px;
+  min-width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title-form{
+  text-align: center;
 }
 
 .registration-form{
@@ -88,3 +105,23 @@ input{
   border: 1px solid black;
 }
 
+.container-links{
+  display: flex;
+  justify-content: space-between;
+}
+
+.link{
+  display: block;
+  text-decoration-line: none;
+}
+
+.registration-form__input{
+  height: 40px;
+  margin: 10px 0px 10px;
+  border-radius: 3px;
+}
+
+.registration-form__input--submit{
+  background-color: #1976d2;
+  color: #fff;
+}
