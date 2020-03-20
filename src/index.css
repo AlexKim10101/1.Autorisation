@@ -93,6 +93,7 @@ ul{
 
 .title-form{
   text-align: center;
+  font-size: 1.8em;
 }
 
 .registration-form{
@@ -100,10 +101,6 @@ ul{
   flex-direction: column;
 }
 
-
-input{
-  border: 1px solid black;
-}
 
 .container-links{
   display: flex;
@@ -113,15 +110,47 @@ input{
 .link{
   display: block;
   text-decoration-line: none;
+  color: #1976d2;
+}
+
+.link:visited{
+  color: #1976d2;
+
+}
+
+.link:hover{
+  text-decoration: underline;
+
+  color:rgb(17,82,147);
+}
+.input-wrapper{
+ 
+  margin: 10px 0px 10px;
 }
 
 .registration-form__input{
   height: 40px;
-  margin: 10px 0px 10px;
+  width: 100%;
+  
+  border: 1px solid grey;
   border-radius: 3px;
+  font-size: 1.2em;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+
+.registration-form__input:hover{
+  border-color: black;
 }
 
 .registration-form__input--submit{
   background-color: #1976d2;
   color: #fff;
+  cursor: pointer;
+  padding-left: 0px;
 }
+
+.registration-form__input--submit:hover{
+  background-color: darkblue;
+}
+
