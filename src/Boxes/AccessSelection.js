@@ -1,11 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {mapStateToProps, mapDispatchToProps} from '../Actions';
 
 const DATA = [{id:'1', name: 'Администратор', description: 'описание не указано'},
 	
 ];
 
 
-export default function AccessSelection(props) {
+function AccessSelection(props) {
 
 	function handleClick(id){
 		props.forwardStep(); 
@@ -23,3 +25,5 @@ export default function AccessSelection(props) {
 	</ul>)
 
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(AccessSelection);

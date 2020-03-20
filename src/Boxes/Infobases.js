@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {mapStateToProps, mapDispatchToProps} from '../Actions';
 
 const DATABASES = [{id:'1', name: 'ЭР', description: 'описание не указано'},
 	{id:'2', name: 'ER_New', description: 'для переноса заказчику'},
@@ -6,8 +8,7 @@ const DATABASES = [{id:'1', name: 'ЭР', description: 'описание не у
 
 ];
 
-
-export default function Infobases(props) {
+function Infobases(props) {
 
 	function handleClick(id){
 		props.forwardStep(); 
@@ -26,5 +27,6 @@ export default function Infobases(props) {
 			{renderInfoBasesList()}
 		</ul>
 	)
-
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Infobases);

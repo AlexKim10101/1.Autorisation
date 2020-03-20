@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux'
+import {mapStateToProps, mapDispatchToProps} from '../Actions';
 
-export default function(props){
+function Authentication(props){
 
 	const [inputData, setInputData] = useState({login:'', password:'', memento: false});
 
@@ -64,3 +66,4 @@ export default function(props){
 	
 }
 
+export default connect(mapStateToProps, mapDispatchToProps)(Authentication);

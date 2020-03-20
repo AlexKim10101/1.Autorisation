@@ -1,32 +1,31 @@
 import React from 'react'
 import { container } from './sc'
+import { connect } from 'react-redux'
+import {mapStateToProps, mapDispatchToProps} from '../Actions';
 
 import Infobases from './Infobases';
 import Authentication from './Authentication'
 import AccessSelection from './AccessSelection'
 import ScreenSelection from './ScreenSelection'
 
-
 // пример 2-го окна https://material-ui.com/getting-started/templates/sign-in/
 
-
-
-export default function Boxes(props) {
+function Boxes(props) {
 	
 	switch (props.step) {
 	  case 0:
-	    return <Infobases forwardStep={props.forwardStep} chooseInfo={props.chooseInfo}/>
+	    return <Infobases />
 	  case 1:
-	    return <Authentication forwardStep={props.forwardStep} />
+	    return <Authentication />
 	  case 2:
-	    return <AccessSelection forwardStep={props.forwardStep} />
+	    return <AccessSelection />
 	  case 3:
-	    return <ScreenSelection forwardStep={props.forwardStep} chooseList={props.chooseList}/>          
+	    return <ScreenSelection />          
 	  case 4:
 	    return <div>Авторизация пройдена</div>
 	  default:
 	  	return <div>Ошибка</div>
 	}
-
-
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Boxes);
