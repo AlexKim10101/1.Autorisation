@@ -24,11 +24,3 @@ export const mapStateToProps = store =>  {
   return  {...store} 
 }
 
-export const mapDispatchToProps = dispatch => {
-  return {
-    forwardStep: () => dispatch(forwardStep()),
-    chooseInfo: (id) => dispatch(chooseInfo(id)),
-    chooseList: (id) => dispatch(chooseList(id)),
-    reset: () => dispatch(reset()),  
-  }
-}
