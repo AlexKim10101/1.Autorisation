@@ -4,19 +4,19 @@ import {AUTH, STEP_UP, CHOOSE_INFO, CHOOSE_LIST, RESET} from '../GlobalVariables
 
 
 //actions
-function forwardStep(){
+export function forwardStep(){
   return {type:STEP_UP}    
 }
 
-function chooseInfo(id){
+export function chooseInfo(id){
   return {type:CHOOSE_INFO, id};
 }
 
-function chooseList(id){
+export function chooseList(id){
   return {type:CHOOSE_LIST, id};
 }
 
-function reset(){
+export function reset(){
   return {type:RESET};
 }
 

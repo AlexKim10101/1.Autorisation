@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import {mapStateToProps, mapDispatchToProps} from '../Actions';
+import { forwardStep } from '../Actions';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -33,7 +33,7 @@ function Authentication(props){
 	return (
 		<div className="container-form">
 			<div className="title-form">Sing in</div>
-			<form className="registration-form" onSubmit={handleSubmit}>
+			<form className="registration-form" onSubmit={handleSubmit} noValidate>
 				<div className="input-wrapper">
 					<TextField
 			            variant="outlined"
@@ -62,8 +62,7 @@ function Authentication(props){
 			            autoComplete="current-password"
 			            value={inputData.password} 
 						onChange={handleInputChange}
-			          />
-					
+			          />					
 				</div>
 				<div className="input-wrapper">
 					<FormControlLabel
@@ -72,13 +71,10 @@ function Authentication(props){
 			            	name ="memento" 
 			            	value={inputData.memento} 
 			            	onChange={handleInputChange}/>}
-			            label="Remember me"
-			            
-						
-			          />
+			            label="Remember me"	            	
+			        />
 				</div>
 				<div className="input-wrapper">
-
 					<Button
 			            type="submit"
 			            fullWidth
@@ -87,8 +83,7 @@ function Authentication(props){
 			            
 			        >
 			        Sign In
-			        </Button>
-					
+			        </Button>					
 				</div>
 			</form>
 			<div className="container-links">
@@ -99,5 +94,17 @@ function Authentication(props){
 	
 	
 }
+
+
+const mapStateToProps = store =>  {   
+  return  {...store} 
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    forwardStep: () => dispatch(forwardStep()),
+  }
+}
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Authentication);

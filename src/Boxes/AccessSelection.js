@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {mapStateToProps, mapDispatchToProps} from '../Actions';
+import {forwardStep} from '../Actions';
 
 const DATA = [{id:'1', name: 'Администратор', description: 'описание не указано'},
 	
@@ -24,6 +24,16 @@ function AccessSelection(props) {
 		{renderInfoBasesList()}
 	</ul>)
 
+}
+
+const mapStateToProps = store =>  {   
+  return  {...store} 
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    forwardStep: () => dispatch(forwardStep()),
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccessSelection);

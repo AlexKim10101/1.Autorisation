@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import {mapStateToProps, mapDispatchToProps} from '../Actions';
+import {forwardStep, chooseList} from '../Actions';
 
 import scr1 from './scr1.png';
 import scr2 from './scr2.png';
@@ -32,6 +32,17 @@ function ScreenSelection(props) {
 		{renderInfoBasesList()}
 	</ul>)
 
+}
+
+const mapStateToProps = store =>  {   
+  return  {...store} 
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    forwardStep: () => dispatch(forwardStep()),
+    chooseList: (id) => dispatch(chooseList(id)),
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ScreenSelection);

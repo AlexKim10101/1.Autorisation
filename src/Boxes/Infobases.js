@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {mapStateToProps, mapDispatchToProps} from '../Actions';
+import {forwardStep, chooseInfo} from '../Actions';
 
 const DATABASES = [{id:'1', name: 'ЭР', description: 'описание не указано'},
 	{id:'2', name: 'ER_New', description: 'для переноса заказчику'},
@@ -27,6 +27,18 @@ function Infobases(props) {
 			{renderInfoBasesList()}
 		</ul>
 	)
+}
+
+
+const mapStateToProps = store =>  {   
+  return  {...store} 
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    forwardStep: () => dispatch(forwardStep()),
+    chooseInfo: (id) => dispatch(chooseInfo(id)),
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Infobases);
