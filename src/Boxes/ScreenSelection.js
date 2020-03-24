@@ -20,7 +20,7 @@ function ScreenSelection(props) {
 	function renderInfoBasesList(){
 		return SCREENSDATA.map((item) =>{
 			return (
-				<li onClick={()=>handleClick(item.id)}>
+				<li className="list__item" onClick={()=>handleClick(item.id)}>
 					<img src={item.url} alt=""/>
 				</li>
 			)

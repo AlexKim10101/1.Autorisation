@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {forwardStep} from '../Actions';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+
 
 const DATA = [{id:'1', name: 'Администратор', description: 'описание не указано'},
-	
+	{id:'2', name: 'Пользователь', description: 'описание не указано'}
 ];
 
 
@@ -16,7 +18,10 @@ function AccessSelection(props) {
 
 	function renderInfoBasesList(){
 		return DATA.map((item) =>{
-			return <li onClick={()=>handleClick(item.id)}>{item.name}</li>
+			return <li className="list__item" onClick={()=>handleClick(item.id)}>
+				<div>{item.name}</div>
+				<KeyboardArrowRight/>
+			</li>
 		})	 
 	}
 

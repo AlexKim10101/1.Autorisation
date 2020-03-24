@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: rgba(240, 240, 240, 1);
+  background-color: #fff;
 }
 
 code {
@@ -45,44 +45,69 @@ ul{
 
 
 
-.list{
-  background-color: white;
-  border-radius: 4px;
-  width: 200px;
-  max-height: 400px;
-  padding: 10px;
-  overflow-y: auto;
-}
 
+/*
 .list > li{
   cursor: pointer;
   margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 .list--databases > li, .list--access > li{
   border-bottom: 1px solid grey;
+  rgba(240, 240, 240, 1);
+}*/
+
+
+
+.list{
+  position: relative;
+  top: -20px;
+ 
+  border: 1px solid grey;
+ /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
+
+  border-radius: 4px;
+  width: 370px;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 1.2em;
+
 
 }
+
+.list__item{
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.list__item:last-child{
+  border:none;
+}
+
+.list__item:hover{
+  background-color: #f7f8fc;
+}
+
 
 .list--screens{
-  background-color: rgba(240, 240, 240, 1);
 
   display: flex;
-  width: 500px;
+  width: 600px;
   justify-content: space-between;
-
+  border: none;
 }
-
-
-
-
 /*Authentication*/
 .container-form{
   position: absolute;
-  top:40%;
+  top:37%;
   left: 50%;
   transform: translate(-50%,-50%);
 
-  width: 40%;
+  width: 370px;
   height: 300px;
   min-width: 320px;
 
@@ -99,6 +124,7 @@ ul{
 .registration-form{
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 
@@ -111,6 +137,7 @@ ul{
   display: block;
   text-decoration-line: none;
   color: #1976d2;
+  font-size: 0.9em
 }
 
 .link:visited{
@@ -125,7 +152,10 @@ ul{
 }
 .input-wrapper{
  
-  margin: 10px 0px 10px;
+}
+
+.input-wrapper--submit{
+  margin-top: 20px;
 }
 
 .registration-form__input{

@@ -33,6 +33,7 @@ function Authentication(props){
 	return (
 		<div className="container-form">
 			<div className="title-form">Sing in</div>
+			
 			<form className="registration-form" onSubmit={handleSubmit} noValidate>
 				<div className="input-wrapper">
 					<TextField
@@ -74,7 +75,7 @@ function Authentication(props){
 			            label="Remember me"	            	
 			        />
 				</div>
-				<div className="input-wrapper">
+				<div className="input-wrapper input-wrapper--submit">
 					<Button
 			            type="submit"
 			            fullWidth

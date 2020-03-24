@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {forwardStep, chooseInfo} from '../Actions';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
-const DATABASES = [{id:'1', name: 'ЭР', description: 'описание не указано'},
-	{id:'2', name: 'ER_New', description: 'для переноса заказчику'},
-	{id:'3', name: 'FGC2', description: 'описание не указано'},
+const DATABASES = [{id:'1', name: 'Infobase 1', description: 'описание не указано'},
+	{id:'2', name: 'Infobase 2', description: 'для переноса заказчику'},
+	{id:'3', name: 'Infobase 3', description: 'описание не указано'},
 
 ];
 
@@ -17,7 +18,11 @@ function Infobases(props) {
 
 	function renderInfoBasesList(){
 		return DATABASES.map((item) =>{
-			return <li onClick={()=>handleClick(item.id)}>{item.name}</li>
+			return (
+				<li className="list__item" onClick={()=>handleClick(item.id)}>
+					<div>{item.name}</div>
+					<KeyboardArrowRight/>
+				</li>)
 		})
 		 
 	}

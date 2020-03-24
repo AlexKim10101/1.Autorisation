@@ -1,7 +1,6 @@
 import React from 'react'
 import { container } from './sc'
 import { connect } from 'react-redux'
-//import {mapStateToProps, mapDispatchToProps} from '../Actions';
 
 import Infobases from './Infobases';
 import Authentication from './Authentication'
@@ -27,7 +26,9 @@ function Boxes(props) {
 	  	return <div>Ошибка</div>
 	}
 }
+
 const mapStateToProps = store =>  {   
   return  {...store} 
 }
+
 export default connect(mapStateToProps)(Boxes);
