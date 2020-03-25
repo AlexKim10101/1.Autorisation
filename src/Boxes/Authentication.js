@@ -19,9 +19,9 @@ function Authentication(props){
 
 	function handleInputChange(event){
 		const target = event.target;
-    	const value = target.name === 'memento' ? target.checked : target.value;
-    	const name = target.name;
-    	setInputData(Object.assign({}, inputData, {[name]: value}));
+  	const value = target.name === 'memento' ? target.checked : target.value;
+  	const name = target.name;
+  	setInputData(Object.assign({}, inputData, {[name]: value}));
 	}
 
 	function handleSubmit(event){
@@ -37,43 +37,43 @@ function Authentication(props){
 			<form className="registration-form" onSubmit={handleSubmit} noValidate>
 				<div className="input-wrapper">
 					<TextField
-			            variant="outlined"
-			            margin="normal"
-			            required
-			            fullWidth
-			            id="email"
-			            label="Имя пользователя"
-			            name="email"
-			            autoComplete="email"
-			            autoFocus
-			            value={inputData.login} 
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Имя пользователя"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            value={inputData.login} 
 						onChange={handleInputChange}
-			          />					
+          />					
 				</div>
 				<div className="input-wrapper">
 					<TextField
-			            variant="outlined"
-			            margin="normal"
-			            required
-			            fullWidth
-			            name="password"
-			            label="Пароль"
-			            type="password"
-			            id="password"
-			            autoComplete="current-password"
-			            value={inputData.password} 
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Пароль"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            value={inputData.password} 
 						onChange={handleInputChange}
-			          />					
+          />					
 				</div>
 				<div className="input-wrapper">
 					<FormControlLabel
-			            control={<Checkbox 
-			            	color="primary" 
-			            	name ="memento" 
-			            	value={inputData.memento} 
-			            	onChange={handleInputChange}/>}
-			            label="Запомнить меня"	            	
-			        />
+            control={<Checkbox 
+          	color="primary" 
+          	name ="memento" 
+          	value={inputData.memento} 
+          	onChange={handleInputChange}/>}
+            label="Запомнить меня"	            	
+	        />
 				</div>
 				<div className="input-wrapper input-wrapper--submit">
 					<Button
@@ -101,14 +101,8 @@ function Authentication(props){
 				<a className="link" href="#">Забыли пароль?</a>
 				<a className="link" href="#">Зарегистрироваться</a>
 			</div>
-		</div>)
-	
-	
-}
-
-
-const mapStateToProps = store =>  {   
-  return  store.step 
+		</div>
+	)
 }
 
 const mapDispatchToProps = dispatch => {
@@ -118,5 +112,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Authentication);
+export default connect(null, mapDispatchToProps)(Authentication);

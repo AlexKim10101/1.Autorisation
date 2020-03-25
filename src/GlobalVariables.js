@@ -64,7 +64,7 @@ const DATABASES_DESCRIPTIONS = [
 	"Laboriosam et doloribus ipsa quam. Voluptas qui et…endi ab temporibus omnis. Sunt atque consequatur.", 
 	"Perferendis odit molestiae vel fuga quia necessita…unt consequuntur iusto fuga quae eveniet vel vel.", 
 	"Molestias dicta molestiae repellat qui possimus at…ae saepe vitae aut sit quaerat. Dicta dolores ut.", 
-	"Dolorem dicta tenetur distinctio eligendi voluptat…mmodi qui amet sunt. Dolore eius fugit excepturi.", 
+	"Dolrem dicta tenetur distinctio eligendi voluptat…mmodi qui amet sunt. Dolore eius fugit excepturi.", 
 	"Quam provident ex dolor. Qui amet mollitia rerum m…ur et odit consectetur maxime impedit voluptatem.", 
 	"Corporis quod sint ipsam qui optio sit. Sit et rat…cere suscipit doloribus ratione libero rerum qui.", 
 	"Quod necessitatibus error rerum unde velit natus t…ptatem. Quos iusto voluptate recusandae suscipit.", 

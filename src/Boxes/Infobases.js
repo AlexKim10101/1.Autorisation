@@ -7,7 +7,7 @@ function Infobases(props) {
 
 	function handleClick(id){
 		props.forwardStep(); 
-		return props.chooseInfo(id);
+		props.chooseInfo(id);
 	}
 
 	function renderInfoBasesList(){
@@ -16,6 +16,7 @@ function Infobases(props) {
 			return (
 				<li className="list__item" onClick={()=>handleClick(item.id)}>
 					<div>{item.name}</div>
+
 					<KeyboardArrowRight/>
 				</li>)
 		})
@@ -31,7 +32,7 @@ function Infobases(props) {
 
 
 const mapStateToProps = store =>  {   
-  return {step:store.step, infoBases:store.infoBases};
+  return { infoBases:store.infoBases};
 }
 
 const mapDispatchToProps = dispatch => {

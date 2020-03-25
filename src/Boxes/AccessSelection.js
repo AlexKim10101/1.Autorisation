@@ -7,8 +7,9 @@ function AccessSelection(props) {
 
 	function handleClick(id){
 		props.forwardStep(); 
-		return props.chooseUser(id);
+		props.chooseUser(id);
 	}
+
 	const DATA = props.users;
 	function renderInfoBasesList(){
 		return DATA.map((item) =>{
@@ -26,14 +27,13 @@ function AccessSelection(props) {
 }
 
 const mapStateToProps = store =>  {   
-  return {step: store.step, users: store.usersList};
+  return { users: store.usersList };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     forwardStep: () => dispatch(forwardStep()),
     chooseUser: (id) => dispatch(chooseUser(id)),
-
   }
 }
 

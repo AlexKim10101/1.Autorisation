@@ -34,9 +34,7 @@ function ScreenSelection(props) {
 
 }
 
-const mapStateToProps = store =>  {   
-  return store.step;
-}
+
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -45,4 +43,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ScreenSelection);
+export default connect(null, mapDispatchToProps)(ScreenSelection);
