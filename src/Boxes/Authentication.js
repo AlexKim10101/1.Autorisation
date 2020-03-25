@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { forwardStep } from '../Actions';
+import { forwardStep, backStep } from '../Actions';
 
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -11,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import { btn } from './sc';
 
 function Authentication(props){
 
@@ -32,7 +32,7 @@ function Authentication(props){
 
 	return (
 		<div className="container-form">
-			<div className="title-form">Sing in</div>
+			<div className="title-form">Авторизация</div>
 			
 			<form className="registration-form" onSubmit={handleSubmit} noValidate>
 				<div className="input-wrapper">
@@ -42,7 +42,7 @@ function Authentication(props){
 			            required
 			            fullWidth
 			            id="email"
-			            label="Email Address"
+			            label="Имя пользователя"
 			            name="email"
 			            autoComplete="email"
 			            autoFocus
@@ -57,7 +57,7 @@ function Authentication(props){
 			            required
 			            fullWidth
 			            name="password"
-			            label="Password"
+			            label="Пароль"
 			            type="password"
 			            id="password"
 			            autoComplete="current-password"
@@ -72,24 +72,34 @@ function Authentication(props){
 			            	name ="memento" 
 			            	value={inputData.memento} 
 			            	onChange={handleInputChange}/>}
-			            label="Remember me"	            	
+			            label="Запомнить меня"	            	
 			        />
 				</div>
 				<div className="input-wrapper input-wrapper--submit">
 					<Button
-			            type="submit"
-			            fullWidth
-			            variant="contained"
-			            color="primary"
-			            
-			        >
-			        Sign In
-			        </Button>					
+					 	onClick={props.backStep}
+            css={btn}
+            fullWidth
+            variant="contained"
+            color="primary"         
+		        >
+		        Назад
+		      </Button>	
+					<Button
+						css={btn}
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"            
+	        >
+	        Войти
+	        </Button>	
+			        			
 				</div>
 			</form>
 			<div className="container-links">
-				<a className="link" href="#">Forgot password?</a>
-				<a className="link" href="#">Don't have an account? Sign Up</a>
+				<a className="link" href="#">Забыли пароль?</a>
+				<a className="link" href="#">Зарегистрироваться</a>
 			</div>
 		</div>)
 	
@@ -98,12 +108,13 @@ function Authentication(props){
 
 
 const mapStateToProps = store =>  {   
-  return  {...store} 
+  return  store.step 
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     forwardStep: () => dispatch(forwardStep()),
+    backStep: () => dispatch(backStep()),
   }
 }
 

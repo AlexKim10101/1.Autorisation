@@ -46,20 +46,6 @@ ul{
 
 
 
-/*
-.list > li{
-  cursor: pointer;
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-.list--databases > li, .list--access > li{
-  border-bottom: 1px solid grey;
-  rgba(240, 240, 240, 1);
-}*/
-
-
-
 .list{
   position: relative;
   top: -20px;
@@ -100,6 +86,8 @@ ul{
   justify-content: space-between;
   border: none;
 }
+
+
 /*Authentication*/
 .container-form{
   position: absolute;
@@ -156,6 +144,8 @@ ul{
 
 .input-wrapper--submit{
   margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .registration-form__input{
@@ -184,3 +174,6 @@ ul{
   background-color: darkblue;
 }
 
+.button{
+  color: red;
+}

@@ -1,4 +1,4 @@
-import {AUTH, STEP_UP, CHOOSE_INFO, CHOOSE_LIST, RESET} from '../GlobalVariables';
+import {AUTH, STEP_UP, STEP_DOWN, CHOOSE_INFO, CHOOSE_LIST, RESET} from '../GlobalVariables';
 import { initialState } from '../Store';
 
 export function reducer(state, action) {
@@ -7,6 +7,8 @@ export function reducer(state, action) {
       return { ...state, isAuth: true }
     case STEP_UP:
       return { ...state, step: state.step + 1 }
+    case STEP_DOWN:
+      return { ...state, step: state.step - 1 }
     case CHOOSE_INFO:
       return { ...state, infobasesList: action.id }
     case CHOOSE_LIST:

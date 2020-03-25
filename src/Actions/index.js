@@ -1,11 +1,15 @@
 
-import {AUTH, STEP_UP, CHOOSE_INFO, CHOOSE_LIST, RESET} from '../GlobalVariables';
+import {AUTH, STEP_UP, STEP_DOWN, CHOOSE_INFO, CHOOSE_LIST, RESET} from '../GlobalVariables';
 
 
 
 //actions
 export function forwardStep(){
   return {type:STEP_UP}    
+}
+
+export function backStep(){
+  return {type:STEP_DOWN}    
 }
 
 export function chooseInfo(id){
@@ -18,9 +22,5 @@ export function chooseList(id){
 
 export function reset(){
   return {type:RESET};
-}
-
-export const mapStateToProps = store =>  {   
-  return  {...store} 
 }
 

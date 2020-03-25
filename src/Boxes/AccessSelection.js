@@ -2,11 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {forwardStep} from '../Actions';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import { createUsers, USERS_QUANTITY } from '../GlobalVariables';
 
 
-const DATA = [{id:'1', name: 'Администратор', description: 'описание не указано'},
-	{id:'2', name: 'Пользователь', description: 'описание не указано'}
-];
+const DATA = createUsers(USERS_QUANTITY);
 
 
 function AccessSelection(props) {
@@ -32,7 +31,7 @@ function AccessSelection(props) {
 }
 
 const mapStateToProps = store =>  {   
-  return  {...store} 
+  return store.step;
 }
 
 const mapDispatchToProps = dispatch => {

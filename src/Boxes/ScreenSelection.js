@@ -35,7 +35,7 @@ function ScreenSelection(props) {
 }
 
 const mapStateToProps = store =>  {   
-  return  {...store} 
+  return store.step;
 }
 
 const mapDispatchToProps = dispatch => {

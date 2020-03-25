@@ -2,12 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {forwardStep, chooseInfo} from '../Actions';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import { createInfoBasesData, INFOBASES_QUANTITY } from '../GlobalVariables';
 
-const DATABASES = [{id:'1', name: 'Infobase 1', description: 'описание не указано'},
-	{id:'2', name: 'Infobase 2', description: 'для переноса заказчику'},
-	{id:'3', name: 'Infobase 3', description: 'описание не указано'},
 
-];
+const DATABASES = createInfoBasesData(INFOBASES_QUANTITY);
 
 function Infobases(props) {
 
@@ -36,7 +34,7 @@ function Infobases(props) {
 
 
 const mapStateToProps = store =>  {   
-  return  {...store} 
+  return store.step;
 }
 
 const mapDispatchToProps = dispatch => {
