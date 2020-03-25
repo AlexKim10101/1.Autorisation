@@ -4,13 +4,14 @@ export const STEP_UP = 'STEP_UP'
 export const STEP_DOWN = 'STEP_DOWN'
 export const CHOOSE_INFO = 'CHOOSE_INFO'
 export const CHOOSE_LIST = 'CHOOSE_LIST'
+export const CHOOSE_USER = 'CHOOSE_USER'
 export const RESET = 'RESET'
 
 export const INFOBASES_QUANTITY = 6; //max=20
 export const USERS_QUANTITY = 6; //max=20
 
 //dataBases
-export function createInfoBasesData(num){
+export function createInfoBases(num){
 	return createData(num, DATABASES_ID, DATABASES_NAMES, DATABASES_DESCRIPTIONS)
 }
 
@@ -80,11 +81,11 @@ export function createUsers(num){
 
 const USERS_NAMES =["Sandy", "Rosina", "Jadon", "Chyna", "Alverta", "Noah", "Clarabelle", "Ressie", "Stephany", "Dorthy", "Sim", "Ismael", "Zaria", "Crystal", "Emil", "Delfina", "Eldred", "Annette", "Mckayla", "Roberto"];
 const USERS_ID = [
-	74239, 18382, 26721, 9475, 
-	31712, 82397, 47435, 24835, 
-	25285, 4060, 9181, 24216, 
-	36540, 76722, 37065, 40839, 
-	7309, 45027, 88597, 69430
+	174239, 118382, 126721, 19475, 
+	131712, 182397, 147435, 124835, 
+	125285, 14060, 19181, 124216, 
+	136540, 176722, 137065, 140839, 
+	17309, 145027, 188597, 169430
 ];
 
 const USERS_DESCRIPTIONS = [

@@ -1,20 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {forwardStep} from '../Actions';
+import {forwardStep, chooseUser} from '../Actions';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import { createUsers, USERS_QUANTITY } from '../GlobalVariables';
-
-
-const DATA = createUsers(USERS_QUANTITY);
-
 
 function AccessSelection(props) {
 
 	function handleClick(id){
 		props.forwardStep(); 
-		
+		return props.chooseUser(id);
 	}
-
+	const DATA = props.users;
 	function renderInfoBasesList(){
 		return DATA.map((item) =>{
 			return <li className="list__item" onClick={()=>handleClick(item.id)}>
@@ -31,12 +26,14 @@ function AccessSelection(props) {
 }
 
 const mapStateToProps = store =>  {   
-  return store.step;
+  return {step: store.step, users: store.usersList};
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     forwardStep: () => dispatch(forwardStep()),
+    chooseUser: (id) => dispatch(chooseUser(id)),
+
   }
 }
 

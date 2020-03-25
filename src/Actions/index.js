@@ -1,5 +1,5 @@
 
-import {AUTH, STEP_UP, STEP_DOWN, CHOOSE_INFO, CHOOSE_LIST, RESET} from '../GlobalVariables';
+import {AUTH, STEP_UP, STEP_DOWN, CHOOSE_INFO, CHOOSE_LIST, CHOOSE_USER, RESET} from '../GlobalVariables';
 
 
 
@@ -18,6 +18,10 @@ export function chooseInfo(id){
 
 export function chooseList(id){
   return {type:CHOOSE_LIST, id};
+}
+
+export function chooseUser(id){
+  return {type:CHOOSE_USER, id};
 }
 
 export function reset(){
